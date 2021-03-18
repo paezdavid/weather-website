@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@300&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- MAIN START PAGE -->
+        <div class="input-container">
+            <div class="input-header">
+                <h1>Weather API Test.</h1>
+                <h3 style="margin-bottom: .5rem; font-family: 'Martel', serif;">Inserte una ciudad: </h3>
+                <div class="input-section" style="max-width: 600px; width: 100%; text-align: center;">    
+                    <input type="text" id="input-field" placeholder="City">
+                    <input type="submit" class="button" value="Search">
+                </div>
+            </div>
+        </div>
+    
+        <!-- RESULTS -->
+        <div class="results">
+            <!-- CURRENT WEATHER. TODAY -->
+            <div class="current-weather">
+                <div class="temp-section">
+                    <div class="temp-img">
+                        <h2 class="current-temp" style="font-family: 'Martel', serif;"></h2>
+                        <img alt="sky state icon" width="65px" height="65px" style="margin-left: 1rem;">
+                    </div>
+                    <div class="location-name-time">
+                        <h3 class="location-name" style="font-size: 1.25rem; font-family: 'Martel', serif;"></h3>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <p class="feels-like"></p>
+                    <p class="sky"></p>
+                    <p class="humidity"></p>
+                    <p class="visibility"></p>
+                </div>
+            </div>
+
+            <div class="forecast-header">
+                <h2 style="font-family: 'Martel', serif; font-weight: 300;">Pronóstico del tiempo.</h2>
+            </div>
+
+            <!-- 3 DAY FORECAST SECTION -->
+            <div class="daily-forecast-section">
+                <div class="forecast-day1">
+                    <div class="day1"></div>
+                    <div class="sky-forecast1"></div>
+                    <div class="minmax-forecast1"></div>
+                </div>
+                <div class="forecast-day2">
+                    <div class="day2"></div>
+                    <div class="sky-forecast2"></div>
+                    <div class="minmax-forecast2"></div>
+                </div>
+                <div class="forecast-day3">
+                    <div class="day3"></div>
+                    <div class="sky-forecast3"></div>
+                    <div class="minmax-forecast3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
