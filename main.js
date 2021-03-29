@@ -4,6 +4,7 @@
 const inputSection = document.querySelector('.input-header');
 const input = document.querySelector('#input-field');
 const inputBtn = document.querySelector('.button');
+input.value = "";
 
 // TEMPERATURA, UBICACIÓN Y TEMP MIN-MAX
 const locationResults = document.querySelector('.results');
@@ -151,11 +152,17 @@ thisLocationWeather()
 
 // EL USUARIO BUSCA UNA UBICACIÓN (CIUDAD)
 async function inputLocationWeather() {
-    let city = await input.value;
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=es&units=metric&appid=98f52917cd500fa8685f8b088d03de2c`;   
-    let response = await fetch(apiURL);
-    let data = response.json();
-    return data; // se retorna los datos de la API
+    let locationSearched = input.value;
+    if (!locationSearched.includes(",")) {
+        alert('El formato de búsqueda es [ciudad, ID]')
+    } else {
+        let city = locationSearched.substring(0, locationSearched.indexOf(","));
+        let countryCode = locationSearched.slice(-2);
+        let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&lang=es&units=metric&appid=98f52917cd500fa8685f8b088d03de2c`;
+        let response = await fetch(apiURL);
+        let data = response.json();
+        return data; // se retorna los datos de la API
+    }
 }
 
 inputBtn.addEventListener('click', () => {
@@ -169,6 +176,8 @@ inputBtn.addEventListener('click', () => {
         let humidity = data.main.humidity; // humedad
         let visibility = data.visibility; // visibilidad
         visibility /= 1000;
+
+        input.value = "";
 
         // Se muestran los datos en la página
         currentTemp.textContent = `${temp} °C`;
