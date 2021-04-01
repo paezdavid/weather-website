@@ -1,4 +1,6 @@
 
+// Body
+const htmlBody = document.querySelector('body');
 
 // USER INPUT
 const inputSection = document.querySelector('.input-header');
@@ -120,18 +122,25 @@ thisLocationWeather()
     weatherConditionID = data.current.weather[0].id;
     if (weatherConditionID < 300) {
         weatherConditionIcon[0].setAttribute('src', 'assets/thunderstorm.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/thunderstorm.jpg)" 
     } else if (weatherConditionID < 400) {
         weatherConditionIcon[0].setAttribute('src', 'assets/drizzle.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
     } else if (weatherConditionID < 600) {
         weatherConditionIcon[0].setAttribute('src', 'assets/rain.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
     } else if (weatherConditionID < 700) {
         weatherConditionIcon[0].setAttribute('src', 'assets/snowflake.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/snow.jpg)"
     } else if (weatherConditionID < 800) {
         weatherConditionIcon[0].setAttribute('src', 'assets/mist.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/mist.jpg)"
     } else if (weatherConditionID === 800) {
         weatherConditionIcon[0].setAttribute('src', 'assets/sun.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/clearsky.jpg)"
     } else if (weatherConditionID > 800) {
         weatherConditionIcon[0].setAttribute('src', 'assets/cloud.svg');
+        htmlBody.style.backgroundImage = "url(/weather-pics/clouds.jpg)"
     };
 
     // Mostramos los datos en la página.
@@ -154,7 +163,7 @@ thisLocationWeather()
 async function inputLocationWeather() {
     let locationSearched = input.value;
     if (!locationSearched.includes(",")) {
-        alert('El formato de búsqueda es [ciudad, ID]')
+        alert('Los datos ingresados son erróneos. El formato de búsqueda es [ciudad, ID]')
     } else {
         let city = locationSearched.substring(0, locationSearched.indexOf(","));
         let countryCode = locationSearched.slice(-2);
@@ -168,6 +177,8 @@ async function inputLocationWeather() {
 inputBtn.addEventListener('click', () => {
     inputLocationWeather() // la función async es llamada al efectuar la búsqueda haciendo click
     .then(data => {
+        if (data.main == undefined) {alert('Los datos ingresados son erróneos. El formato de búsqueda es [ciudad, ID]')}
+        
         let temp = data.main.temp; // temperatura
         let cityName = data.name; // ciudad
         let feelsLike = data.main.feels_like; // sensación térmica
@@ -191,18 +202,25 @@ inputBtn.addEventListener('click', () => {
         weatherConditionID = data.weather[0].id;
         if (weatherConditionID < 300) {
             weatherConditionIcon[0].setAttribute('src', 'assets/thunderstorm.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/thunderstorm.jpg)" 
         } else if (weatherConditionID < 400) {
             weatherConditionIcon[0].setAttribute('src', 'assets/drizzle.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
         } else if (weatherConditionID < 600) {
             weatherConditionIcon[0].setAttribute('src', 'assets/rain.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
         } else if (weatherConditionID < 700) {
             weatherConditionIcon[0].setAttribute('src', 'assets/snowflake.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/snow.jpg)"
         } else if (weatherConditionID < 800) {
             weatherConditionIcon[0].setAttribute('src', 'assets/mist.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/mist.jpg)"
         } else if (weatherConditionID === 800) {
             weatherConditionIcon[0].setAttribute('src', 'assets/sun.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/clearsky.jpg)"
         } else if (weatherConditionID > 800) {
             weatherConditionIcon[0].setAttribute('src', 'assets/cloud.svg');
+            htmlBody.style.backgroundImage = "url(/weather-pics/clouds.jpg)"
         };
 
         // Aquí hacemos uso del objeto llamado ciudad que declaramos al inicio.
