@@ -122,25 +122,25 @@ thisLocationWeather()
     weatherConditionID = data.current.weather[0].id;
     if (weatherConditionID < 300) {
         weatherConditionIcon[0].setAttribute('src', 'assets/thunderstorm.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/thunderstorm.jpg)" 
+        htmlBody.style.backgroundImage = "url(weather-pics/thunderstorm.jpg)" 
     } else if (weatherConditionID < 400) {
         weatherConditionIcon[0].setAttribute('src', 'assets/drizzle.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
+        htmlBody.style.backgroundImage = "url(weather-pics/rainwindow.jpg)"
     } else if (weatherConditionID < 600) {
         weatherConditionIcon[0].setAttribute('src', 'assets/rain.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
+        htmlBody.style.backgroundImage = "url(weather-pics/rainwindow.jpg)"
     } else if (weatherConditionID < 700) {
         weatherConditionIcon[0].setAttribute('src', 'assets/snowflake.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/snow.jpg)"
+        htmlBody.style.backgroundImage = "url(weather-pics/snow.jpg)"
     } else if (weatherConditionID < 800) {
         weatherConditionIcon[0].setAttribute('src', 'assets/mist.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/mist.jpg)"
+        htmlBody.style.backgroundImage = "url(weather-pics/mist.jpg)"
     } else if (weatherConditionID === 800) {
         weatherConditionIcon[0].setAttribute('src', 'assets/sun.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/clearsky.jpg)"
+        htmlBody.style.backgroundImage = "url(weather-pics/clearsky.jpg)"
     } else if (weatherConditionID > 800) {
         weatherConditionIcon[0].setAttribute('src', 'assets/cloud.svg');
-        htmlBody.style.backgroundImage = "url(/weather-pics/clouds.jpg)"
+        htmlBody.style.backgroundImage = "url(weather-pics/clouds.jpg)"
     };
 
     // Mostramos los datos en la página.
@@ -202,25 +202,25 @@ inputBtn.addEventListener('click', () => {
         weatherConditionID = data.weather[0].id;
         if (weatherConditionID < 300) {
             weatherConditionIcon[0].setAttribute('src', 'assets/thunderstorm.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/thunderstorm.jpg)" 
+            htmlBody.style.backgroundImage = "url(weather-pics/thunderstorm.jpg)" 
         } else if (weatherConditionID < 400) {
             weatherConditionIcon[0].setAttribute('src', 'assets/drizzle.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
+            htmlBody.style.backgroundImage = "url(weather-pics/rainwindow.jpg)"
         } else if (weatherConditionID < 600) {
             weatherConditionIcon[0].setAttribute('src', 'assets/rain.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/rainwindow.jpg)"
+            htmlBody.style.backgroundImage = "url(weather-pics/rainwindow.jpg)"
         } else if (weatherConditionID < 700) {
             weatherConditionIcon[0].setAttribute('src', 'assets/snowflake.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/snow.jpg)"
+            htmlBody.style.backgroundImage = "url(weather-pics/snow.jpg)"
         } else if (weatherConditionID < 800) {
             weatherConditionIcon[0].setAttribute('src', 'assets/mist.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/mist.jpg)"
+            htmlBody.style.backgroundImage = "url(weather-pics/mist.jpg)"
         } else if (weatherConditionID === 800) {
             weatherConditionIcon[0].setAttribute('src', 'assets/sun.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/clearsky.jpg)"
+            htmlBody.style.backgroundImage = "url(weather-pics/clearsky.jpg)"
         } else if (weatherConditionID > 800) {
             weatherConditionIcon[0].setAttribute('src', 'assets/cloud.svg');
-            htmlBody.style.backgroundImage = "url(/weather-pics/clouds.jpg)"
+            htmlBody.style.backgroundImage = "url(weather-pics/clouds.jpg)"
         };
 
         // Aquí hacemos uso del objeto llamado ciudad que declaramos al inicio.
